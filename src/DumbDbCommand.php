@@ -6,8 +6,8 @@ use Carbon\Carbon;
 use Exception;
 use Flarum\Console\AbstractCommand;
 use Flarum\Foundation\{Config, Paths};
+use Spatie\DbDumper\Compressors\{Bzip2Compressor, GzipCompressor};
 use Spatie\DbDumper\Databases\MySql;
-use Spatie\DbDumper\Compressors\{GzipCompressor, Bzip2Compressor};
 use Spatie\DbDumper\Exceptions\CannotSetParameter;
 use Symfony\Component\Console\Input\{InputArgument, InputOption};
 
@@ -19,7 +19,7 @@ class DumbDbCommand extends AbstractCommand
     ];
 
     /**
-     * Inspired by WP-CLI's DB_Command
+     * Inspired by WP-CLI's DB_Command.
      * @see https://github.com/wp-cli/db-command/blob/e9c4e8ab61e99f7fa7e31e584c2b2b5d54d071db/src/DB_Command.php#L1937
      */
     private const ALLOWED_MYSQLDUMP_OPTIONS = [
@@ -207,7 +207,6 @@ class DumbDbCommand extends AbstractCommand
             mkdir($dir, 0755, true);
         }
 
-
         if ($binaryPath = $this->input->getOption('binary-path')) {
             $dumper->setDumpBinaryPath($binaryPath);
         }
@@ -252,6 +251,7 @@ class DumbDbCommand extends AbstractCommand
             $this->info("Database dumped successfully to: $path");
         } catch (Exception $e) {
             $this->error('Failed to dump database: '.$e->getMessage());
+
             return 1;
         }
 
