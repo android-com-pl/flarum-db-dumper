@@ -1,4 +1,6 @@
-# Flarum DB Dumper
+# Flarum Database Dumper
+
+[![Latest Stable Version](https://img.shields.io/packagist/v/acpl/flarum-db-dumper)](https://packagist.org/packages/acpl/flarum-db-dumper) [![Total Downloads](https://img.shields.io/packagist/dt/acpl/flarum-db-dumper.svg)](https://packagist.org/packages/acpl/flarum-db-dumper/stats) [![GitHub Sponsors](https://img.shields.io/badge/Donate-%E2%9D%A4-%23db61a2.svg?&logo=github&logoColor=white&labelColor=181717)](https://github.com/android-com-pl/flarum-db-dumper?sponsor=1)
 
 Database backup extension for Flarum that allows dumping database content using the `db:dump` command.
 
@@ -24,7 +26,7 @@ php flarum db:dump /backups/dump.sql.gz   # gzip compression
 php flarum db:dump /backups/dump.sql.bz2  # bzip2 compression
 
 # Create backup on live site without locking tables
-php flarum db:dump --all-tablespaces --single-transaction --quick --lock-tables=false
+php flarum db:dump --single-transaction --quick --lock-tables=false
 ```
 
 ### Options
@@ -51,3 +53,4 @@ Check mysqldump documentation for available options.
 
 - [Packagist](https://packagist.org/packages/acpl/flarum-db-dumper)
 - [GitHub](https://github.com/android-com-pl/flarum-db-dumper)
+- [Discuss](https://discuss.flarum.org/d/36911-database-dumper)
