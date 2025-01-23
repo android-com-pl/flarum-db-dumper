@@ -22,6 +22,9 @@ php flarum db:dump ../backups/forum.sql
 # Dump with compression (based on extension)
 php flarum db:dump /backups/dump.sql.gz   # gzip compression
 php flarum db:dump /backups/dump.sql.bz2  # bzip2 compression
+
+# Create backup on live site without locking tables
+php flarum db:dump --all-tablespaces --single-transaction --quick --lock-tables=false
 ```
 
 ### Options
@@ -34,6 +37,9 @@ php flarum db:dump /backups/dump.sql.bz2  # bzip2 compression
 - `--skip-auto-increment`: Skip AUTO_INCREMENT values
 - `--no-column-statistics`: Disable column statistics (for MySQL 8 compatibility)
 - `--binary-path=/path/to/binary`: Custom mysqldump binary location
+
+Additionally, most of the standard mysqldump options are supported (like `--single-transaction`, `--quick`, `--lock-tables`, etc).
+Check mysqldump documentation for available options.
 
 ## Requirements
 
