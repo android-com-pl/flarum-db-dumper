@@ -2,6 +2,7 @@
 
 namespace ACPL\FlarumDbDumper;
 
+use ACPL\FlarumDbDumper\Helper\Format;
 use Carbon\Carbon;
 use Exception;
 use Flarum\Console\AbstractCommand;
@@ -248,7 +249,8 @@ class DumbDbCommand extends AbstractCommand
 
         try {
             $dumper->dumpToFile($path);
-            $this->info("Database dumped successfully to: $path");
+            $filesize = Format::humanReadableSize(filesize($path));
+            $this->info("Database dumped successfully to: $path ($filesize)");
         } catch (Exception $e) {
             $this->error('Failed to dump database: '.$e->getMessage());
 
