@@ -249,8 +249,9 @@ class DumbDbCommand extends AbstractCommand
 
         try {
             $dumper->dumpToFile($path);
-            $filesize = Format::humanReadableSize(filesize($path));
-            $this->info("Database dumped successfully to: $path ($filesize)");
+            $fullPath = realpath($path);
+            $filesize = Format::humanReadableSize(filesize($fullPath));
+            $this->info("Database dumped successfully to: $fullPath ($filesize)");
         } catch (Exception $e) {
             $this->error('Failed to dump database: '.$e->getMessage());
 
