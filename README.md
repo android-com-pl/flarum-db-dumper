@@ -1,5 +1,11 @@
 # Flarum Database Dumper
 
+> [!WARNING]
+> This extension has been renamed and significantly improved. It is now replaced by **[`acpl/flarum-db-snapshots`](https://github.com/android-com-pl/flarum-db-snapshots)**. 
+> 
+> The new extension supports both creating **AND** restoring database dumps.
+
+
 [![Latest Stable Version](https://img.shields.io/packagist/v/acpl/flarum-db-dumper)](https://packagist.org/packages/acpl/flarum-db-dumper) [![Total Downloads](https://img.shields.io/packagist/dt/acpl/flarum-db-dumper.svg)](https://packagist.org/packages/acpl/flarum-db-dumper/stats) [![GitHub Sponsors](https://img.shields.io/badge/Donate-%E2%9D%A4-%23db61a2.svg?&logo=github&logoColor=white&labelColor=181717)](https://github.com/android-com-pl/flarum-db-dumper?sponsor=1)
 
 Database backup extension for Flarum that allows dumping database content using the `db:dump` command.
